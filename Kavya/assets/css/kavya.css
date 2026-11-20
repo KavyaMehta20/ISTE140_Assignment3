@@ -1,0 +1,232 @@
+/* Name: Kavya | Student ID: 413001957 | Team: 3
+   Colours used on this page:
+   Midnight indigo #1E1B4B  - header, footer, text
+   Cloud           #EEF1FF  - page background
+   Snow            #FFFFFF  - cards and panels
+   Violet          #6C5CE7  - accents, links, card top border
+   Mint            #2EE6C5  - badges and hover highlights
+   Fonts: Georgia (headings), Segoe UI / Arial (body)
+*/
+
+/* Reset: removes default browser spacing so I control all of it */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page background and body font; CONTRAST: dark text on a light background */
+body {
+  background: #EEF1FF;
+  color: #1E1B4B;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Main grid container: 3 columns (nav, main, sidebar) and a gap between regions.
+   minmax lets the side columns shrink a little on narrow windows, and the middle column uses minmax(0, 1fr) so it can shrink too. */
+.page {
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) minmax(0, 1fr) minmax(140px, 240px);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+}
+
+/* Header spans all 3 columns in row 1 and stays at the top when scrolling (finishing touch 1) */
+.site-header {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(90deg, #1E1B4B, #6C5CE7);
+  color: #FFFFFF;
+  padding: 24px;
+  border-radius: 0 0 16px 16px;
+}
+
+/* CONTRAST: big serif headings stand out clearly from the small sans-serif body text */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+/* Header title size */
+.site-header h1 {
+  font-size: 2.4rem;
+}
+
+/* Header subtitle in mint so it pops against the dark gradient */
+.site-header p {
+  color: #2EE6C5;
+}
+
+/* Nav sits in column 1, row 2 */
+.site-nav {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  background: #FFFFFF;
+  padding: 16px;
+  border-radius: 12px;
+  border-top: 4px solid #6C5CE7;
+  box-shadow: 0 4px 12px rgba(30, 27, 75, 0.12);
+}
+
+/* Nav list: a grid with one link per row, with a small gap */
+.site-nav ul {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+
+/* Nav links fill the whole row so they are easy to click */
+.site-nav a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #6C5CE7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Hover highlight in mint */
+.site-nav a:hover {
+  background: #2EE6C5;
+  color: #1E1B4B;
+}
+
+/* Main content sits in the middle column, row 2 */
+.site-main {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  gap: 32px;
+}
+
+/* PROXIMITY: a heading is close to its own text, and big gaps separate the sections */
+.site-main section {
+  display: grid;
+  gap: 12px;
+}
+
+/* Section headings in violet-free ink colour, same size everywhere (REPETITION) */
+.site-main h2 {
+  font-size: 1.7rem;
+}
+
+/* Card grid: auto-fit makes as many columns as fit, each at least 200px wide.
+   If I change 200px to 300px, each card has to be wider, so fewer fit in a row
+   and the cards wrap onto the next row sooner. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* REPETITION: every card has the same white background, radius, padding and top border.
+   Rounded corners and a soft shadow are my finishing touch 2. */
+.card {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  background: #FFFFFF;
+  padding: 12px 12px 16px;
+  border-radius: 12px;
+  border-top: 4px solid #6C5CE7;
+  box-shadow: 0 4px 12px rgba(30, 27, 75, 0.15);
+  transition: transform 0.2s;
+}
+
+/* Card grows a little on hover (finishing touch 3) */
+.card:hover {
+  transform: scale(1.04);
+}
+
+/* Card images fill the card width so all edges line up (ALIGNMENT) */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Small mint badge in the corner of each card */
+.badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2EE6C5;
+  color: #1E1B4B;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+/* Card heading size */
+.card h3 {
+  font-size: 1.2rem;
+}
+
+/* Card text is a little smaller than normal text */
+.card p {
+  font-size: 0.95rem;
+}
+
+/* Sidebar sits in column 3, row 2 and looks like the nav panel (REPETITION of colours and shadow) */
+.site-aside {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: start;
+  display: grid;
+  gap: 12px;
+  background: #FFFFFF;
+  padding: 16px;
+  border-radius: 12px;
+  border-top: 4px solid #6C5CE7;
+  box-shadow: 0 4px 12px rgba(30, 27, 75, 0.12);
+}
+
+/* Sidebar heading size */
+.site-aside h2 {
+  font-size: 1.3rem;
+}
+
+/* Definition list as a 2 column grid: algorithm name on the left, speed on the right */
+.site-aside dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+}
+
+/* Speed values in violet bold so they stand out from the names */
+.site-aside dd {
+  color: #6C5CE7;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Small note under the list */
+.site-aside .note {
+  font-size: 0.85rem;
+}
+
+/* Footer spans all 3 columns in the last row */
+.site-footer {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  background: #1E1B4B;
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Footer link in mint on the dark background */
+.site-footer a {
+  color: #2EE6C5;
+}
