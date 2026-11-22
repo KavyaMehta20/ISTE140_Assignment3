@@ -1,0 +1,86 @@
+<!-- Name: Reya Aldrine Tomse | UID: 748006484 | Team 3 -->
+<!-- The audio element used is my own recording. The images are my own and was created using Canva -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Reya: Search Algorithms </title>
+  <link rel="stylesheet" href="assets/css/reya.css">
+</head>
+
+<body>
+<!-- One grid container holds the header, nav, main area and footer -->
+<div class="page">
+
+  <header class="page-header">
+    <h1>Search Algorithms</h1>
+    <p>Methods to find elements in a list</p>
+  </header>
+
+  <!-- Left-hand navigation: first link returns to the team home page -->
+  <nav class="page-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="../index.html">Team Home</a></li>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#listen">Audio Overview</a></li>
+      <li><a href="#algorithms">The Algorithms</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-main">
+    <section id="intro">
+      <h2>What are Search Algorithms?</h2>
+      <p> Search algorithms are used to locate a specific element within a dataset. They are crucial for problem solving and data processing. It takes a list or array along with a target and systematically goes through to find whether the target exists in the given dataset and also find its location.  </p>
+    </section>
+
+    <section id="listen" class="listen">
+      <h2>Audio Overview :) </h2>
+      <audio controls>
+        <source src="assets/audio/intro.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <section id="algorithms">
+      <h2>The Algorithms</h2>
+
+      <div class="cards">
+        <article class="card">
+          <img src="assets/images/linear.png" alt="A row of boxes with an arrow checking each box from left to right">
+          <h3>1) Linear search</h3>
+          <p>Simplest Algorithm. Checks each item in order until it finds the target. Very slow when the dataset is long.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/binary.png" alt="A row of sorted boxes with the middle box highlighted and the right half crossed out">
+          <h3>2) Binary search</h3>
+          <p>Fastest algorithm to find item in an already sorted list. Splits the list in half repeatedly until target value is found. </p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/jump.png" alt="A row of boxes with arrows jumping over blocks of three">
+          <h3>3) Jump search</h3>
+          <p>Skips ahead in fixed blocks until you pass the target, then step back and check one by one. Also requires an already sorted list.</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/interpolation.png" alt="A row of boxes with an arrow pointing to a guessed position near the end">
+          <h3>4) Interpolation search</h3>
+          <p>Calculates the probable location of the target and compares the value to the target. Works best on evenly spread, sorted data.</p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Reya Aldrine Tomse Aldrine Albert | ISTE 140 | <a href="../index.html">Back to home</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
+

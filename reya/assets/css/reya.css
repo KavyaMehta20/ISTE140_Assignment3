@@ -1,0 +1,214 @@
+/* Name: Reya Aldrine Tomse | UID: 748006484 | Team 3
+
+   Colours used:
+   Blush cream   #FFF5F2  - page background
+   Pastel pink   #F4B8C6  - header, nav, footer, gradient
+   Plum          #4A2C3D  - body text and headings
+   Pastel peach  #FCE0D0  - cards and panels, gradient
+   Rose          #EE8CA0  - badges, card top borders, hover highlights
+
+   Fonts used:
+   Trebuchet MS - headings
+   Verdana - body
+*/
+
+
+/* Removes default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REPETITION: Page background and body font- The same fonts and colours */
+body {
+    background: #FFF5F2;
+    color: #4A2C3D;
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.6;
+}
+
+/* Grid container - two columns with a gap between */
+.page {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Header - sticky to keep at top */
+.page-header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 24px;
+    background: #F4B8C6;
+    color: #4A2C3D;
+}
+
+/* CONTRAST: Headings are different font than Body */
+h1, h2, h3 {
+    font-family: "Trebuchet MS", Tahoma, sans-serif;
+    line-height: 1.2;
+}
+
+/* Page title size */
+h1 {
+    font-size: 2rem;
+}
+
+/* PROXIMITY: Section */
+h2 {
+    font-size: 1.5rem;
+    color: #4A2C3D;
+    margin-bottom: 12px;
+}
+
+/* Navigation panel */
+.page-nav {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    background: #F4B8C6;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* Nav links in one column with a small gap */
+.page-nav ul {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+}
+
+/* CONTRAST: Plum text on Pastel pink */
+.page-nav a {
+    display: block;
+    padding: 8px 12px;
+    color: #4A2C3D;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* Hover and keyboard focus highlight */
+.page-nav a:hover,
+.page-nav a:focus {
+    background: #EE8CA0;
+    color: #4A2C3D;
+}
+
+/* PROXIMITY: Groups are separated in Main. ALIGNMENT: Everything starts from the same edge */
+.page-main {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    gap: 32px;
+    padding-right: 24px;
+}
+
+/* Limits line length so the intro is easy to read */
+#intro p {
+    max-width: 70ch;
+}
+
+/* Audio panel */
+.listen {
+    background: #FCE0D0;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+/* Audio player fills the panel width */
+.listen audio {
+    width: 100%;
+}
+
+/* REPETITION: every card uses the same bg color, border and padding */
+/* auto-fit puts as many cards in a row as fit, and each card is at least 300px wide.
+   If I change 300px to 200px, more cards fit in each row. If I change it to 400px,
+   fewer cards fit, so they drop to the next row sooner. */
+   .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+/* REPETITION: same peach card style for every card */
+.card {
+    position: relative;
+    background: #FCE0D0;
+    border-top: 4px solid #EE8CA0;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(74, 44, 61, 0.25);
+}
+
+/* Card images */
+.card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* PROXIMITY: heading stands out and is close to the content */
+.card h3 {
+    font-size: 1.1rem;
+    color: #4A2C3D;
+    margin-bottom: 6px;
+}
+
+/* Smaller text inside cards */
+.card p {
+    font-size: 0.9rem;
+}
+
+/* CONTRAST: Badge on card */
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #EE8CA0;
+    color: #4A2C3D;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+/* Footer */
+.page-footer {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    background: #F4B8C6;
+    color: #4A2C3D;
+    padding: 16px 24px;
+    text-align: center;
+}
+
+/* CONTRAST: plum link on the pink footer */
+.page-footer a {
+    color: #4A2C3D;
+}
+
+/* Narrow screens: switch to one column */
+@media (max-width: 700px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+    .page-header,
+    .page-footer,
+    .page-nav,
+    .page-main {
+        grid-column: 1;
+    }
+    .page-header { grid-row: 1; }
+    .page-nav { grid-row: 2; margin: 0 16px; }
+    .page-main { grid-row: 3; padding: 0 16px; }
+    .page-footer { grid-row: 4; }
+}

@@ -1,0 +1,141 @@
+<!-- GAUTAM BINU - 430009508 - Team 3 -->
+<!-- HTML document for the Gautam data structures page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Character encoding and responsive viewport settings. -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gautam - Data Structures</title>
+	<!-- Connects this page to its external stylesheet. -->
+	<link rel="stylesheet" href="assets/css/gautam.css">
+</head>
+<body>
+	<!-- CRAP: Grid creates alignment and a clear content structure. -->
+	<main class="page">
+		<!-- Hero introduction: Contrast uses purple and white. -->
+		<header class="hero">
+			<h1>Data Structures</h1>
+			<p>
+				Data structures are ways to organize and store data so programs can access
+				and update it efficiently.
+			</p>
+		</header>
+
+		<!-- Navigation links; repetition gives all links consistent styling. -->
+		<nav class="top-nav" aria-label="Main navigation">
+            <div id="nav-content">
+			<a href="#topics">Topics</a>
+			<a href="#video">Video</a>
+			<a href="../index.html">Team Home</a>
+            </div>
+		</nav>
+
+		<!-- Main content column: proximity keeps related topic information together. -->
+		<section class="main-content">
+			<!-- Introduction section highlights why structure choices matter. -->
+			<section class="why-data-structures">
+				<h2>Why Data Structures?</h2>
+				<p>Choosing the right data structure is key to writing fast, scalable software. Different structures trade off memory usage, lookup speed, and insertion or deletion costs depending on how your program reads and modifies information whether you need instant index access, first-in-first-out task flow, key-value lookups, or dynamic node links.</p>
+			</section>
+
+			<!-- Two-column topic grid; each card follows the same repeated layout. -->
+			<section class="topics" id="topics" aria-label="Data structure topics">
+				<article class="card">
+					<h2>Arrays</h2>
+					<!-- Source: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZkH6gpKKJIBrWOGnV715JqkT33BHIFEyxOYao2fsXyxzTXG-cB7Tj9M0&s=10 -->
+					<img src="assets/img/array.jpg" alt="Array diagram">
+					<p>Arrays store items in order and allow quick index-based lookup.</p>
+					<p class="complexity">Access: O(1)</p>
+				</article>
+
+				<article class="card">
+					<h2>Queues</h2>
+					<!-- Source: https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg -->
+					<img src="assets/img/data_queue.svg" alt="Queue diagram">
+					<p>Queues follow FIFO, making them useful for scheduling and task flow.</p>
+					<p class="complexity">Enqueue/Dequeue: O(1)</p>
+				</article>
+
+				<article class="card">
+					<h2>Dictionaries</h2>
+					<!-- Source: https://developers.google.com/static/edu/python/images/dict.png -->
+					<img src="assets/img/dict.png" alt="Dictionary map diagram">
+					<p>Dictionaries map unique keys to values for direct lookups.</p>
+					<p class="complexity">Lookup: O(1) average</p>
+				</article>
+
+				<article class="card">
+					<h2>Linked Lists</h2>
+					<!-- Source: https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg -->
+					<img src="assets/img/singly_linked_list.svg" alt="Linked list diagram">
+					<p>Linked lists chain nodes together and support flexible insertions.</p>
+					<p class="complexity">Insert at head: O(1)</p>
+				</article>
+
+				<article class="card">
+					<h2>Hash Tables</h2>
+					<!-- Source: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_YbtTptivn43xENTy34uURBOLG6KGq9XdWK5vSpH_A8HypD9dmowFmRb4&s=10 -->
+					<img src="assets/img/hash.png" alt="Hash table diagram">
+					<p>Hash tables use hashing to store key-value pairs efficiently.</p>
+					<p class="complexity">Search: O(1) average</p>
+				</article>
+
+				<article class="card">
+					<h2>Stacks</h2>
+					<!-- Source: https://upload.wikimedia.org/wikipedia/commons/2/29/Data_stack.svg -->
+					<img src="assets/img/data_stack.svg" alt="Stack diagram">
+					<p>Stacks are LIFO structures used for undo systems and call tracking.</p>
+					<p class="complexity">Push/Pop: O(1)</p>
+				</article>
+
+				<article class="card">
+					<h2>Trees</h2>
+					<!-- Source: https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_tree.svg -->
+					<img src="assets/img/binary_tree.svg" alt="Tree diagram">
+					<p>Trees represent hierarchical data like folders, menus, and indexes.</p>
+					<p class="complexity">Search: O(log n) balanced</p>
+				</article>
+
+				<article class="card">
+					<h2>Graphs</h2>
+					<!-- Source: https://upload.wikimedia.org/wikipedia/commons/5/5b/6n-graf.svg -->
+					<img src="assets/img/graf.svg" alt="Graph diagram">
+					<p>Graphs connect nodes and edges to model routes and networks.</p>
+					<p class="complexity">Traversal: O(V + E)</p>
+				</article>
+			</section>
+
+			<!-- Video section provides a visual explanation of data structures. -->
+			<section class="video-section" id="video" aria-label="Data structures video">
+				<h2>Watch and Learn</h2>
+				<div class="video-wrapper">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/vVL6NFzr0Rg?si=HgJhHy-yZl5aAI7g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</section>
+		</section>
+
+		<!-- Sidebar: proximity groups practical examples beside the main content. -->
+		<aside class="sidebar" aria-label="Sidebar">
+			<h2>Practical Application</h2>
+			<p>practical use cases for each structure.</p>
+			<ul>
+				<li><span class="term">Arrays:</span> index-based data access</li>
+				<li><span class="term">Queues:</span> print tasks and scheduling</li>
+				<li><span class="term">Dictionaries:</span> fast key-value lookups</li>
+				<li><span class="term">Linked Lists:</span> dynamic node chains and frequent insertions</li>
+				<li><span class="term">Hash Tables:</span> hash-mapped key-value storage and fast search</li>
+				<li><span class="term">Stacks:</span> LIFO call tracking, undo history, and backtracking</li>
+				<li><span class="term">Trees:</span> hierarchical data like folders, menus, and indexes</li>
+				<li><span class="term">Graphs:</span> modeling networks, routes, and relationships</li>
+			</ul>
+		</aside>
+
+		<!-- Footer provides alignment and a return link. -->
+		<footer class="page-footer">
+		  <p>Gautam | ISTE 140 | <a href="../index.html">Back to home</a></p>
+		</footer>
+	</main>
+</body>
+</html>

@@ -1,0 +1,262 @@
+/* GAUTAM BINU - 430009508 - Team 3 */
+
+/*
+	COLOUR LIST 
+	#4E144B - deep purple: hero, footer, headings, links, sidebar terms
+	#B34B3E - brick red: borders and accents
+	#26222A - near-black: body text and video background
+	#E2DDD8 - warm grey: soft borders and hover outlines
+	#F6F4F1 - off-white: page background
+	#FFFFFF - white: card, nav, sidebar and hero/footer text backgrounds
+*/
+
+/* Reset: removes browser default spacing so every element sizes the same way. */
+* {
+	box-sizing: border-box; /* padding and border count inside the width, so boxes don't overflow */
+	margin: 0;              /* clears default browser margins */
+	padding: 0;             /* clears default browser padding */
+}
+
+/* CONTRAST: dark near-black text on an off-white page keeps reading easy. */
+body {
+	font-family: Arial, sans-serif; /* clean sans-serif font with a safe fallback */
+	color: #26222A;                 /* default text colour for the whole page */
+	background: #F6F4F1;            /* soft page background behind all the white boxes */
+}
+
+/* ALIGNMENT: a two-column grid lines up the header, nav, main, sidebar and footer. */
+.page {
+	max-width: 1200px;            /* stops the layout from stretching too wide on big screens */
+	margin: 0 auto;               /* centres the page horizontally */
+	padding: 2rem 1rem 3rem;      /* space around the edges: top, sides, bottom */
+	display: grid;                /* turns the page into a grid container */
+	gap: 1.5rem;                  /* even space between all grid rows and columns */
+	grid-template-columns: 3fr 1fr; /* main column is 3x wider than the sidebar */
+}
+
+/* CONTRAST: white text on deep purple makes the title stand out; it spans the full grid width. */
+.hero {
+	grid-column: 1 / -1;              /* spans from the first column line to the last */
+	grid-row: 1;                      /* sits on the first row */
+	background: #4E144B;
+	color: #FFFFFF;
+	border-radius: 6px;
+	padding: 1.75rem;
+	text-align: center;
+	width: 100vw;                     /* stretches to the full browser width */
+	margin-left: calc(50% - 50vw);    /* pulls the box out so it touches both screen edges */
+	margin-right: calc(50% - 50vw);
+}
+
+/* CONTRAST: the title is the largest text on the page so it is read first. */
+.hero h1 {
+	font-size: 40px;       /* biggest text on the page */
+	margin-bottom: 0.4rem; /* small gap before the intro paragraph */
+}
+
+/* ALIGNMENT: the navigation bar sits on its own row and centres its links. */
+.top-nav {
+	grid-column: 1 / -1;  /* full width row */
+	grid-row: 2;          /* sits directly under the hero */
+	display: grid;
+	place-items: center;  /* centres the links both vertically and horizontally */
+	min-height: 78px;     /* keeps the bar a comfortable height */
+	padding: 1rem 1.2rem;
+	background: #FFFFFF;
+	border: 2.5px solid #B34B3E;
+	border-radius: 6px;
+	margin-bottom: 0.5rem;
+}
+
+/* ALIGNMENT: the links sit in one centred row with even gaps. */
+#nav-content {
+	display: grid;
+	grid-auto-flow: column; /* places each link side by side in a row */
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;           /* even space between links */
+}
+
+/* REPETITION: every nav link shares the same font, colour, padding and corners. */
+.top-nav a {
+	text-decoration: none;          /* removes the default underline */
+	font-family: monospace;
+	font-size: 1.35rem;
+	color: #4E144B;
+	padding: 0.4rem 0.85rem;        /* makes each link a bigger click target */
+	border: 1px solid transparent;  /* invisible border reserves space so hover doesn't shift the layout */
+	border-radius: 4px;
+}
+
+/* REPETITION: all nav links show the same grey outline on hover. */
+.top-nav a:hover {
+	border-color: #E2DDD8; /* reveals the border when the mouse is over a link */
+}
+
+/* ALIGNMENT: the main column sits in the left grid column under the nav. */
+.main-content {
+	grid-column: 1; /* left column */
+	grid-row: 3;    /* third row, beside the sidebar */
+	display: grid;
+	gap: 1rem;      /* space between intro, cards and video */
+}
+
+/* REPETITION: the topic cards sit in an auto-fit grid with equal gaps. If 200px becomes 300px, each card must be wider, so fewer fit per row and the cards wrap to the next row sooner. */
+.topics {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* as many columns as fit, each at least 200px wide */
+	gap: 20px;
+}
+
+/* REPETITION: every card shares the same border, padding and corners. */
+.card {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto; /* heading, image, description (stretches), complexity label */
+	background: #FFFFFF;
+	border: 1px solid #E2DDD8;
+	border-top: 3px solid #B34B3E;          /* thicker red accent on top... */
+	border-bottom: 3px solid #B34B3E;       /* ...and bottom */
+	border-radius: 6px;
+	padding: 20px;
+}
+
+/* REPETITION: every card image is the same height and fits without cropping. */
+.card img {
+	width: 100%;
+	height: 160px;          /* fixed height so all cards line up */
+	object-fit: contain;    /* scales the image to fit without cutting or stretching it */
+	margin: 0.5rem 0 0.8rem;
+}
+
+/* REPETITION: every card heading uses the same purple and weight. */
+.card h2 {
+	color: #4E144B;
+	font-weight: 600;
+	margin-bottom: 0.4rem;
+}
+
+/* CONTRAST: dark card text with taller line spacing stays easy to read on white. */
+.card p {
+	color: #26222A;
+	line-height: 1.6; /* extra space between lines of text */
+}
+
+/* REPETITION: every complexity label uses the same monospace style and purple. */
+.complexity {
+	margin-top: 0.8rem;
+	padding-top: 0.8rem;
+	font-family: monospace; /* code-style font suits the Big-O notation */
+	font-size: 0.9rem;
+	color: #4E144B;
+}
+
+/* PROXIMITY: the border and padding group the video content into its own section. */
+.video-section {
+	border: 2.5px solid #B34B3E;
+	border-radius: 6px;
+	padding: 1rem;
+}
+
+/* ALIGNMENT: the heading sits directly above the video, in the same purple as other headings. */
+.video-section h2 {
+	margin-bottom: 0.8rem;
+	color: #4E144B;
+}
+
+/* ALIGNMENT: the video keeps a 16:9 shape and fills the section width. */
+.video-wrapper {
+	width: 100%;
+	aspect-ratio: 16 / 9;  /* keeps the standard widescreen video shape */
+	min-height: 420px;     /* prevents the video from getting too small */
+	border: 1px solid #E2DDD8;
+	border-radius: 6px;
+	overflow: hidden;      /* clips the video to the rounded corners */
+	background: #26222A;   /* dark backdrop while the video loads */
+}
+
+/* ALIGNMENT: the embedded video fills its wrapper with no extra border. */
+.video-wrapper iframe {
+	width: 100%;
+	height: 100%;
+	border: 0; /* removes the default iframe border */
+}
+
+/* PROXIMITY: the intro heading and paragraph sit close together in one framed box. */
+.why-data-structures {
+	background: #FFFFFF;
+	border: 1px solid #4E144B;
+	border-left: 5px solid #B34B3E;  /* thick red edges frame the intro */
+	border-right: 5px solid #B34B3E;
+	border-radius: 6px;
+	padding: 1.25rem 1.5rem;
+}
+
+/* REPETITION: the intro heading uses the same purple as every other heading. */
+.why-data-structures h2 {
+	color: #4E144B;
+	margin-bottom: 0.75rem;
+}
+
+/* CONTRAST: taller line spacing keeps the intro paragraph readable. */
+.why-data-structures p {
+	line-height: 1.6;
+}
+
+/* PROXIMITY: the practical uses are grouped in one boxed sidebar beside the main content. */
+.sidebar {
+	grid-column: 2;       /* right column */
+	grid-row: 3;          /* same row as the main content */
+	background: #FFFFFF;
+	border: 2.5px solid #B34B3E;
+	border-radius: 6px;
+	padding: 1rem;
+	height: fit-content;  /* box is only as tall as its content instead of stretching to match main */
+}
+
+/* REPETITION: the sidebar heading uses the same purple as every other heading. */
+.sidebar h2 {
+	color: #4E144B;
+	margin-bottom: 0.5rem;
+}
+
+/* PROXIMITY: spacing below the intro line separates it from the list. */
+.sidebar p {
+	margin-bottom: 1rem;
+}
+
+/* ALIGNMENT: the list is indented so the bullets line up under the heading. */
+.sidebar ul {
+	padding-left: 1.2rem; /* room for the bullet points */
+	margin-top: 1rem;
+}
+
+/* PROXIMITY: equal spacing between list items keeps them grouped but readable. */
+.sidebar li {
+	margin-bottom: 0.35rem;
+}
+
+/* CONTRAST: bold purple terms stand out from the plain description text. */
+.sidebar .term {
+	color: #4E144B;
+	font-weight: 700; /* bold */
+}
+
+/* ALIGNMENT: the footer spans the full width on the last grid row and centres its text. */
+.page-footer {
+	grid-column: 1 / -1;            /* full width row */
+	grid-row: 4;                    /* last row, under main and sidebar */
+	background: #4E144B;
+	color: #FFFFFF;
+	padding: 0.8rem 1rem;
+	font-family: monospace;
+	font-size: 0.9rem;
+	text-align: center;
+	width: 100vw;                   /* stretches to the full browser width */
+	margin-left: calc(50% - 50vw);  /* pulls the box out so it touches both screen edges */
+	margin-right: calc(50% - 50vw);
+}
+
+/* REPETITION: the footer link uses the same brick red accent as the borders. */
+.page-footer a {
+	color: #B34B3E;
+}

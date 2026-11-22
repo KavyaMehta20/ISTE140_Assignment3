@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Name: Kavya | Student ID: 413001957 | Team: 3 -->
+<!-- all images are SVG bar charts I drew myself, so nothing needs a citation. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorting Algorithms: A Top Five Guide</title>
+  <link rel="stylesheet" href="assets/css/kavya.css">
+</head>
+<body>
+  <!-- one grid container holds header, nav, main, sidebar and footer -->
+  <div class="page">
+
+    <header class="site-header">
+      <h1>Sorting Algorithms</h1>
+      <p>Five ways a computer puts a messy list in order</p>
+    </header>
+
+    <!-- left column: navigation -->
+    <nav class="site-nav" aria-label="Page navigation">
+      <ul>
+<li><a href="../index.html">Home</a></li>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#algorithms">Top five</a></li>
+        <li><a href="#tips">Study tips</a></li>
+      </ul>
+    </nav>
+
+    <!-- middle column: main content -->
+    <main class="site-main">
+      <section id="intro">
+        <h2>Why sorting matters</h2>
+        <p>Sorting is one of the first big ideas in computer science. Whenever an app shows your messages from newest to oldest, or a shop lists prices from low to high, a sorting algorithm did the work behind the scenes. Some methods are easy to understand but slow on large lists. Others are harder to write but finish in a fraction of the time. Here are five that every CS student should know, ranked from the simplest idea to the most clever one. Each card shows a small bar chart: the mint and violet bars are the ones being compared or moved.</p>
+      </section>
+
+      <section id="algorithms">
+        <h2>My top five</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="badge">#1</span>
+            <img src="assets/img/bubble.svg" alt="Bar chart of a list being sorted by bubble sort, with two neighbouring bars highlighted">
+            <h3>Bubble Sort</h3>
+            <p>Swaps neighbours that are in the wrong order, so big values bubble to the end. Simple but slow.</p>
+          </article>
+          <article class="card">
+            <span class="badge">#2</span>
+            <img src="assets/img/selection.svg" alt="Bar chart showing selection sort picking the smallest remaining bar">
+            <h3>Selection Sort</h3>
+            <p>Finds the smallest item left and puts it at the front, one position at a time.</p>
+          </article>
+          <article class="card">
+            <span class="badge">#3</span>
+            <img src="assets/img/insertion.svg" alt="Bar chart showing insertion sort sliding a bar into its place">
+            <h3>Insertion Sort</h3>
+            <p>Builds a sorted section by sliding each new item into the right spot, like sorting playing cards.</p>
+          </article>
+          <article class="card">
+            <span class="badge">#4</span>
+            <img src="assets/img/merge.svg" alt="Bar chart split into two halves to show merge sort dividing a list">
+            <h3>Merge Sort</h3>
+            <p>Splits the list in half again and again, then merges the sorted halves back together.</p>
+          </article>
+          <article class="card">
+            <span class="badge">#5</span>
+            <img src="assets/img/quick.svg" alt="Bar chart with one highlighted pivot bar for quick sort">
+            <h3>Quick Sort</h3>
+            <p>Picks a pivot, puts smaller items on one side and bigger on the other, then repeats.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tips">
+        <h2>Study tips</h2>
+        <p>Do not just memorise code. Draw a short list of six numbers on paper and run each algorithm by hand, step by step. Once you can predict every swap, writing the code becomes much easier.</p>
+      </section>
+    </main>
+
+    <!-- right column: sidebar -->
+    <aside class="site-aside">
+      <h2>Speed at a glance</h2>
+      <dl>
+        <dt>Bubble Sort</dt>
+        <dd>O(n²)</dd>
+        <dt>Selection Sort</dt>
+        <dd>O(n²)</dd>
+        <dt>Insertion Sort</dt>
+        <dd>O(n²)</dd>
+        <dt>Merge Sort</dt>
+        <dd>O(n log n)</dd>
+        <dt>Quick Sort</dt>
+        <dd>O(n log n) average</dd>
+      </dl>
+      <p class="note">Smaller growth means faster on big lists.</p>
+    </aside>
+
+    <footer class="site-footer">
+      <p>Made by Kavya for ISTE 140 | <a href="../index.html">Back to home</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

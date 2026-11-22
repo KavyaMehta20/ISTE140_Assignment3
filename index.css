@@ -1,0 +1,93 @@
+/* Team 3 home page stylesheet 
+   Colours used (only these):
+   Charcoal #222831 - text
+   Paper    #F4F1EA - page background
+   Teal     #14746F - header, footer, card top border, hover background
+   White    #FFFFFF - cards, and text on teal
+   Fonts: Georgia (headings), Arial (body)
+*/
+
+/* Reset: removes default browser spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page background and body text; CONTRAST: dark text on a light background */
+body {
+  background: #F4F1EA;
+  color: #222831;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Grid container: header, cards and footer stacked in one column with space between groups (PROXIMITY) */
+.home {
+  display: grid;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Header: teal with white text for strong contrast */
+.home-header {
+  background: #14746F;
+  color: #FFFFFF;
+  padding: 32px 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Headings use the serif font everywhere (REPETITION) */
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Site name size */
+.home-header h1 {
+  font-size: 2.6rem;
+}
+
+/* Card grid: auto-fit puts as many cards in a row as fit, each at least 220px wide */
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* REPETITION: every member card has the same colours, padding, corners and shadow.
+   The whole card is a link; it lines up with the same edges as the header. */
+.member {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  background: #FFFFFF;
+  color: #222831;
+  padding: 20px;
+  border-radius: 12px;
+  border-top: 4px solid #14746F;
+  box-shadow: 0 4px 12px rgba(34, 40, 49, 0.15);
+  text-decoration: none;
+}
+
+/* Hover: the card background turns teal with white text */
+.member:hover {
+  background: #14746F;
+  color: #FFFFFF;
+}
+
+/* Member name size */
+.member h2 {
+  font-size: 1.4rem;
+}
+
+/* Footer: same teal colour as the header so the page is framed top and bottom */
+.home-footer {
+  background: #14746F;
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+}
